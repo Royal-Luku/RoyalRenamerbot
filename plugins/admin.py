@@ -20,51 +20,58 @@ async def warn(c, m):
 
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["active"]))
 async def buypremium(bot, message):
-	await message.reply_text("Select Plan.........",quote=True,reply_markup=InlineKeyboardMarkup([[ 
-        			InlineKeyboardButton("VIP",callback_data = "vip") ]]))
+	await message.reply_text("Select Plan.........",quote=True,reply_markup=InlineKeyboardMarkup([
+                         [       
+                                 InlineKeyboardButton("Plan 1", callback_data="vip1")
+				   ], [
+					InlineKeyboardButton("Plan 2", callback_data="vip2")
+				   ], [
+					InlineKeyboardButton("Plan 3", callback_data="vip3")
+				   ], [
+        			InlineKeyboardButton("Plan 4",callback_data = "vip4") ]]))
         			
 
 @Client.on_callback_query(filters.regex('vip1'))
 async def vip(bot,update):
-	id = update.message.reply_to_message.text.split("/addpremium")
+	id = update.message.reply_to_message.text.split("/active")
 	user_id = id[1].replace(" ", "")
 	inlimit  = 10737418240
 	uploadlimit(int(user_id),10737418240)
 	usertype(int(user_id),"VIP1")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Users")
-	await bot.send_message(user_id,"Hey Ur Upgraded To VIP check your plan here /myplan")
+	await bot.send_message(user_id,"Hey, Your Premium Plan Has Been Active Chek Plan /plan")
 
 @Client.on_callback_query(filters.regex('vip2'))
 async def vip(bot,update):
-	id = update.message.reply_to_message.text.split("/addpremium")
+	id = update.message.reply_to_message.text.split("/active")
 	user_id = id[1].replace(" ", "")
 	inlimit  = 21474836480
 	uploadlimit(int(user_id),21474836480)
 	usertype(int(user_id),"VIP2")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Users")
-	await bot.send_message(user_id,"Hey Ur Upgraded To VIP check your plan here /myplan")
+	await bot.send_message(user_id,"Hey, Your Premium Plan Has Been Active Chek Plan /plan")
 
 @Client.on_callback_query(filters.regex('vip3'))
 async def vip(bot,update):
-	id = update.message.reply_to_message.text.split("/addpremium")
+	id = update.message.reply_to_message.text.split("/active")
 	user_id = id[1].replace(" ", "")
 	inlimit  = 53687091200
 	uploadlimit(int(user_id),53687091200)
 	usertype(int(user_id),"VIP3")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Users")
-	await bot.send_message(user_id,"Hey Ur Upgraded To VIP check your plan here /myplan")
+	await bot.send_message(user_id,"Hey, Your Premium Plan Has Been Active Chek Plan /plan")
 
 @Client.on_callback_query(filters.regex('vip4'))
 async def vip(bot,update):
-	id = update.message.reply_to_message.text.split("/addpremium")
+	id = update.message.reply_to_message.text.split("/active")
 	user_id = id[1].replace(" ", "")
 	inlimit  = 10737418240000
 	uploadlimit(int(user_id),10737418240000)
 	usertype(int(user_id),"VIP4")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Users")
-	await bot.send_message(user_id,"Hey Ur Upgraded To VIP check your plan here /myplan")
+	await bot.send_message(user_id,"Hey, Your Premium Plan Has Been Active Chek Plan /plan")
 

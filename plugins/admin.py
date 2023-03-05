@@ -18,19 +18,53 @@ async def warn(c, m):
                  await m.reply_text("User Not Notfied Sucessfully 😔") 
 
 
-@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["addpremium"]))
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["active"]))
 async def buypremium(bot, message):
 	await message.reply_text("Select Plan.........",quote=True,reply_markup=InlineKeyboardMarkup([[ 
         			InlineKeyboardButton("VIP",callback_data = "vip") ]]))
         			
 
-@Client.on_callback_query(filters.regex('vip'))
+@Client.on_callback_query(filters.regex('vip1'))
+async def vip(bot,update):
+	id = update.message.reply_to_message.text.split("/addpremium")
+	user_id = id[1].replace(" ", "")
+	inlimit  = 10737418240
+	uploadlimit(int(user_id),10737418240)
+	usertype(int(user_id),"VIP1")
+	addpre(int(user_id))
+	await update.message.edit("Added successfully To Premium Users")
+	await bot.send_message(user_id,"Hey Ur Upgraded To VIP check your plan here /myplan")
+
+@Client.on_callback_query(filters.regex('vip2'))
+async def vip(bot,update):
+	id = update.message.reply_to_message.text.split("/addpremium")
+	user_id = id[1].replace(" ", "")
+	inlimit  = 21474836480
+	uploadlimit(int(user_id),21474836480)
+	usertype(int(user_id),"VIP2")
+	addpre(int(user_id))
+	await update.message.edit("Added successfully To Premium Users")
+	await bot.send_message(user_id,"Hey Ur Upgraded To VIP check your plan here /myplan")
+
+@Client.on_callback_query(filters.regex('vip3'))
+async def vip(bot,update):
+	id = update.message.reply_to_message.text.split("/addpremium")
+	user_id = id[1].replace(" ", "")
+	inlimit  = 53687091200
+	uploadlimit(int(user_id),53687091200)
+	usertype(int(user_id),"VIP3")
+	addpre(int(user_id))
+	await update.message.edit("Added successfully To Premium Users")
+	await bot.send_message(user_id,"Hey Ur Upgraded To VIP check your plan here /myplan")
+
+@Client.on_callback_query(filters.regex('vip4'))
 async def vip(bot,update):
 	id = update.message.reply_to_message.text.split("/addpremium")
 	user_id = id[1].replace(" ", "")
 	inlimit  = 10737418240000
 	uploadlimit(int(user_id),10737418240000)
-	usertype(int(user_id),"VIP")
+	usertype(int(user_id),"VIP4")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Users")
 	await bot.send_message(user_id,"Hey Ur Upgraded To VIP check your plan here /myplan")
+

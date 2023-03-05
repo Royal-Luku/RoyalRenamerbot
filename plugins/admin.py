@@ -37,7 +37,7 @@ async def vip(bot,update):
 	user_id = id[1].replace(" ", "")
 	inlimit  = 10737418240
 	uploadlimit(int(user_id),10737418240)
-	usertype(int(user_id),"VIP1")
+	usertype(int(user_id),"PLAN 1")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Users")
 	await bot.send_message(user_id,"Hey, Your Premium Plan Has Been Active Chek Plan /plan")
@@ -48,7 +48,7 @@ async def vip(bot,update):
 	user_id = id[1].replace(" ", "")
 	inlimit  = 21474836480
 	uploadlimit(int(user_id),21474836480)
-	usertype(int(user_id),"VIP2")
+	usertype(int(user_id),"PLAN 2")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Users")
 	await bot.send_message(user_id,"Hey, Your Premium Plan Has Been Active Chek Plan /plan")
@@ -59,7 +59,7 @@ async def vip(bot,update):
 	user_id = id[1].replace(" ", "")
 	inlimit  = 53687091200
 	uploadlimit(int(user_id),53687091200)
-	usertype(int(user_id),"VIP3")
+	usertype(int(user_id),"PLAN 3")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Users")
 	await bot.send_message(user_id,"Hey, Your Premium Plan Has Been Active Chek Plan /plan")
@@ -68,9 +68,9 @@ async def vip(bot,update):
 async def vip(bot,update):
 	id = update.message.reply_to_message.text.split("/active")
 	user_id = id[1].replace(" ", "")
-	inlimit  = 10737418240000
-	uploadlimit(int(user_id),10737418240000)
-	usertype(int(user_id),"VIP4")
+	inlimit  = 107374182400
+	uploadlimit(int(user_id),107374182400)
+	usertype(int(user_id),"PLAN 4")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Users")
 	await bot.send_message(user_id,"Hey, Your Premium Plan Has Been Active Chek Plan /plan")
